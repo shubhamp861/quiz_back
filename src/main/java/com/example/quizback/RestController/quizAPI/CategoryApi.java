@@ -22,6 +22,12 @@ public class CategoryApi {
         return  new ResponseEntity<>(categoryService.createOrUpdateCategory(categoryDto), HttpStatus.OK);
     }
 
+     @GetMapping("/test")
+    public ResponseEntity<?> getCategory(){
+        return new ResponseEntity<>("Test",HttpStatus.OK);
+    }
+    
+    
     @GetMapping("/getCategory/{id}")
     public ResponseEntity<?> getCategory(@PathVariable("id") long id){
         return new ResponseEntity<>(categoryService.getCategoryById(id),HttpStatus.OK);
